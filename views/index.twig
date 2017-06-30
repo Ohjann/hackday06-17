@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href='stylesheets/style.css' rel='stylesheet' type='text/css'>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+        <script src="scripts/jquery.geocomplete.js"></script>
+        <script src="scripts/script.js"></script>
+
+    </head>
+
+    <body>
+        <div class="form-container">
+            <form id="ajaxform" action="/events" method="get" class="hform">
+                <input type="text" name="loc" id="loc" placeholder="Location">
+                <input type="hidden" name="lat" id="lat">
+                <input type="hidden" name="lng" id="lng">
+                <select id="distance" name="distanct">
+                    <option value="200">200m radius</option>
+                    <option value="400">400m radius</option>
+                    <option value="600" selected="selected">600m radius</option>
+                    <option value="800">800m radius</option>
+                    <option value="1000">1000m radius</option>
+                    <option value="1200">1200m radius</option>
+                    <option value="1400">1400m radius</option>
+                    <option value="1600">1600m radius</option>
+                    <option value="1800">1800m radius</option>
+                    <option value="2000">2000m radius</option>
+                    <option value="2200">2200m radius</option>
+                    <option value="2400">2400m radius</option>
+                </select>
+                <select id="sort" name="sort">
+                    <option value="popularity" select="selected">By Popularity</option>
+                    <option value="distance">By Distance</option>
+                    <option value="venue">By Venue</option>
+                    <option value="time">By Time</option>
+                </select>
+                <input type="submit" name="submit" value="Search" class="button" id="submit">
+            </form>
+        </div>
+        <div class="container">
+            <div id="form-messages">
+                <span class="emptystate"></span>
+            </div>
+        </div>
+    </body>
+</html>

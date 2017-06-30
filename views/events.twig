@@ -1,0 +1,18 @@
+{% for event in events %}
+<div class="event">
+    <a target="_blank" href= "http://www.facebook.com/{{ event.id }}">
+        <div class="event-header" style="background-image: url('{{ event.profilePicture}}')">
+            <h1 class="name">{{ event.name }}</h1>
+        </div>
+        <div class="deeets">
+            <div class="attending">
+                <p>{{ event.stats.attending }}</p>
+                <p>{{ event.stats.maybe }}</p>
+            </div>
+            <p class="location">{{event.venue.name }}</p>
+            <p class="date">{{ event.startTime|date("Y-m-d ga") }}</p>
+            <p class="description">{{event.description }} </p>
+        </div>
+    </a>
+</div>
+{% endfor %}
